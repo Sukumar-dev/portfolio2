@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sukumar-dev.github.io/portfolio2/sitemap.xml
