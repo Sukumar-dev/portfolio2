@@ -786,6 +786,16 @@
       transition: 0.22s ease;
     }
 
+    .project .detail a {
+      color: #0d6f68;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .project .detail a:hover {
+      text-decoration: underline;
+    }
+
     .project.open .detail {
       max-height: 120px;
     }
@@ -1025,7 +1035,7 @@
         </div>
         <div class="stat-grid" id="statGrid">
           <article class="stat">
-            <div class="num" data-target="3">0</div>
+            <div class="num" data-target="5">0</div>
             <div class="label">Major Projects</div>
           </article>
           <article class="stat">
@@ -1108,16 +1118,34 @@
       <section class="panel section reveal" id="projects">
         <div class="section-head">
           <h2>Projects</h2>
-          <p class="section-note">Applied Engineering</p>
+          <p class="section-note">Applied Engineering + GitHub Builds</p>
         </div>
 
         <div class="filter-row">
           <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="language">Language</button>
+          <button class="filter-btn" data-filter="realtime">Real-Time</button>
           <button class="filter-btn" data-filter="ml">Machine Learning</button>
           <button class="filter-btn" data-filter="hardware">Hardware</button>
         </div>
 
         <div class="project-grid">
+          <article class="project" data-type="language">
+            <span class="project-tag">Language</span>
+            <h3>Learn Norwegian</h3>
+            <p>Built an interactive English-to-Norwegian practice tool with voice translation, quick phrases, and pronunciation playback.</p>
+            <button class="view-outcome" type="button">View Outcome</button>
+            <p class="detail">Outcome: delivered a browser-based learning flow with speech input, text-to-speech guidance, theme variations, and phrase shortcuts for everyday conversation. <a href="https://github.com/Sukumar-dev/test" target="_blank" rel="noreferrer">Open GitHub Repo</a></p>
+          </article>
+
+          <article class="project" data-type="realtime">
+            <span class="project-tag">Real-Time</span>
+            <h3>Voice Room</h3>
+            <p>Created a WebRTC and Socket.IO voice room so users can join shared browser rooms and talk live without installing an app.</p>
+            <button class="view-outcome" type="button">View Outcome</button>
+            <p class="detail">Outcome: shipped shareable room links, peer-to-peer audio signaling, and a deployment-ready structure for GitHub Pages plus Render hosting. <a href="https://github.com/Sukumar-dev/Voice-chat" target="_blank" rel="noreferrer">Open GitHub Repo</a></p>
+          </article>
+
           <article class="project" data-type="ml">
             <span class="project-tag">Machine Learning</span>
             <h3>Android Malware Detection using Genetic Algorithm</h3>
