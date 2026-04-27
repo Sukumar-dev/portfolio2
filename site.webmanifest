@@ -1,0 +1,25 @@
+{
+  "name": "Sukumar Singarapu Portfolio",
+  "short_name": "Sukumar",
+  "start_url": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#f5f7fb",
+  "icons": [
+    {
+      "src": "/portfolio/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/portfolio/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/portfolio/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ]
+}
