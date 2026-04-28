@@ -531,7 +531,7 @@
     }
 
     .section-block {
-      grid-column: 1;
+      grid-column: 1 / -1;
       display: grid;
       gap: 22px;
       min-width: 0;
@@ -730,7 +730,7 @@
     }
 
     .site-footer {
-      grid-column: 1;
+      grid-column: 1 / -1;
       display: flex;
       justify-content: space-between;
       gap: 16px;
@@ -991,16 +991,39 @@
       }
 
       .profile-card {
+        display: grid;
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 14px;
         max-width: none;
-        margin: 18px 0 0;
+        margin: 14px 0 0;
+        padding: 12px;
         overflow: visible;
         page-break-inside: avoid;
         break-inside: avoid;
       }
 
       .profile-photo {
-        aspect-ratio: 0.95;
-        max-height: none;
+        width: 140px;
+        aspect-ratio: 0.78;
+        max-height: 180px;
+        border-radius: 6px;
+      }
+
+      .profile-body {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 16px;
+        padding: 0;
+      }
+
+      .profile-meta,
+      .contact-list {
+        grid-column: 1 / -1;
+      }
+
+      .contact-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 16px;
       }
 
       .metric,
