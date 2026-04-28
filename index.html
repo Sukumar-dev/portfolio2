@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="icon" type="image/png" sizes="32x32" href="favicon-sukumar-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-sukumar-32.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sukumar Singarapu | Full Stack Developer Portfolio</title>
   <meta
     name="description"
-    content="Portfolio of Sukumar Singarapu, an entry-level full stack developer with experience in JavaScript, Java, Python, SQL, REST APIs, WebRTC, machine learning, and web application projects."
+    content="Portfolio of Sukumar Singarapu, a full stack developer focused on JavaScript, Java, Python, SQL, REST APIs, WebRTC, machine learning, and practical project case studies."
   />
   <meta
     name="keywords"
@@ -32,7 +30,7 @@
   <meta property="og:title" content="Sukumar Singarapu | Full Stack Developer Portfolio" />
   <meta
     property="og:description"
-    content="Portfolio of Sukumar Singarapu featuring software projects, technical skills, certifications, and hands-on development experience."
+    content="Portfolio of Sukumar Singarapu featuring project case studies, technical skills, certifications, and hands-on development experience."
   />
   <meta property="og:url" content="https://sukumar-dev.github.io/portfolio/" />
   <meta property="og:type" content="website" />
@@ -43,7 +41,7 @@
   <meta name="twitter:title" content="Sukumar Singarapu | Full Stack Developer Portfolio" />
   <meta
     name="twitter:description"
-    content="Software portfolio of Sukumar Singarapu with projects, technical skills, certifications, and direct links."
+    content="Software portfolio of Sukumar Singarapu with project case studies, technical skills, certifications, and direct proof links."
   />
   <meta name="twitter:image" content="https://sukumar-dev.github.io/portfolio/Sukumar.jpeg" />
 
@@ -86,7 +84,7 @@
         "@id": "https://sukumar-dev.github.io/portfolio/#page",
         "url": "https://sukumar-dev.github.io/portfolio/",
         "name": "Sukumar Singarapu Portfolio",
-        "description": "Portfolio website of Sukumar Singarapu featuring software projects, technical skills, certifications, and hands-on development experience.",
+        "description": "Portfolio website of Sukumar Singarapu featuring software project case studies, technical skills, certifications, and hands-on development experience.",
         "about": {
           "@id": "https://sukumar-dev.github.io/portfolio/#person"
         },
@@ -115,6 +113,16 @@
                 "operatingSystem": "Web",
                 "url": "https://voice-chat-7ryk.onrender.com",
                 "codeRepository": "https://github.com/Sukumar-dev/Voice-chat"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Accident Prevention, Detection, and Reporting System",
+                "url": "https://sukumar-dev.github.io/portfolio/Accident-Prevention-DOCUMENTATION%20.pdf",
+                "description": "Safety-focused project documentation for accident prevention, detection, alerting, and reporting workflow."
               }
             }
           ]
@@ -148,7 +156,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 26px;
+      scroll-padding-top: 104px;
     }
 
     body {
@@ -311,6 +319,11 @@
       padding: 44px 24px 72px;
       display: grid;
       gap: 68px;
+    }
+
+    .hero,
+    .section-block {
+      scroll-margin-top: 104px;
     }
 
     .hero {
@@ -559,6 +572,7 @@
     }
 
     .experience-card,
+    .case-study,
     .project,
     .certificate-card,
     .strength-card,
@@ -571,6 +585,7 @@
     }
 
     .experience-card,
+    .case-study,
     .project,
     .certificate-card,
     .strength-card,
@@ -592,6 +607,7 @@
     }
 
     .experience-meta h3,
+    .case-study h3,
     .project h3,
     .strength-card h3,
     .education-item h3,
@@ -624,6 +640,98 @@
       gap: 16px;
       flex-wrap: wrap;
       align-items: end;
+    }
+
+    .case-study-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .case-study {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .case-study-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: start;
+    }
+
+    .case-study-titleblock {
+      display: grid;
+      gap: 10px;
+      max-width: 680px;
+    }
+
+    .case-study-stack {
+      color: var(--muted);
+      font-size: 0.88rem;
+      max-width: 320px;
+    }
+
+    .case-study h3 {
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    .case-study-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .case-study-story {
+      display: grid;
+      gap: 14px;
+    }
+
+    .case-study-block {
+      display: grid;
+      gap: 6px;
+    }
+
+    .case-study-block h4,
+    .case-study-proof h4 {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .case-study-block p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .case-study-proof {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .case-study-proof-list {
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .supporting-projects-head {
+      display: grid;
+      gap: 8px;
+      max-width: 740px;
+      margin-top: 6px;
     }
 
     .filter-row {
@@ -665,7 +773,9 @@
       align-content: start;
     }
 
-    .project.hide {
+    .project.hide,
+    .case-study.hide,
+    .supporting-projects-head.hide {
       display: none;
     }
 
@@ -784,6 +894,10 @@
       .profile-card {
         max-width: 640px;
       }
+
+      .case-study-layout {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 880px) {
@@ -830,6 +944,10 @@
       .metric-row {
         grid-template-columns: 1fr;
       }
+
+      .case-study-layout {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 620px) {
@@ -869,6 +987,14 @@
 
       .nav-links a {
         font-size: 0.95rem;
+      }
+
+      .case-study-proof {
+        padding: 16px;
+      }
+
+      #declaration {
+        min-height: calc(100vh - 120px);
       }
     }
 
@@ -1015,6 +1141,7 @@
 
       .metric,
       .experience-card,
+      .case-study,
       .project,
       .certificate-card,
       .strength-card,
@@ -1032,12 +1159,29 @@
       }
 
       .project,
+      .case-study,
       .certificate-card,
       .experience-card,
       .strength-card,
       .summary-card,
       .education-item {
         padding: 14px;
+      }
+
+      .case-study-layout,
+      .case-study-story {
+        display: block;
+      }
+
+      .case-study-block + .case-study-block,
+      .case-study-proof {
+        margin-top: 10px;
+      }
+
+      .case-study-proof {
+        border: 1px solid #d1d5db;
+        background: transparent;
+        padding: 12px;
       }
 
       .site-footer {
@@ -1251,7 +1395,7 @@
             <p class="section-kicker">Projects</p>
             <h2 class="section-title">Projects I have built.</h2>
             <p class="section-copy">
-              These projects reflect the kind of work I enjoy most: web apps, real-time communication, machine learning, and practical problem solving.
+              These are the projects I would talk about first in an interview. They show the use case, the core flow I built, and the technical choices behind the work.
             </p>
           </div>
 
@@ -1264,45 +1408,144 @@
           </div>
         </div>
 
+        <div class="case-study-list">
+          <article class="case-study" data-type="language">
+            <div class="case-study-head">
+              <div class="case-study-titleblock">
+                <span class="project-tag">Featured Case Study - Language Learning</span>
+                <h3>Learn Norwegian</h3>
+                <p class="project-copy">
+                  A browser-based English-to-Norwegian practice app built for quick phrase lookup, pronunciation practice, and simple day-to-day language learning.
+                </p>
+              </div>
+              <p class="case-study-stack"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, browser audio playback, translation workflow, GitHub Pages</p>
+            </div>
+
+            <div class="case-study-layout">
+              <div class="case-study-story">
+                <div class="case-study-block">
+                  <h4>What I built</h4>
+                  <p>I built a lightweight language practice tool where a learner can move from English phrases to Norwegian output and listen to pronunciation without installing anything.</p>
+                </div>
+                <div class="case-study-block">
+                  <h4>Why I built it</h4>
+                  <p>I wanted the project to feel useful immediately. Instead of making a large learning platform, I focused on a small flow that helps someone practice common phrases quickly.</p>
+                </div>
+                <div class="case-study-block">
+                  <h4>Challenge I solved</h4>
+                  <p>The main challenge was keeping translation, phrase display, and audio playback simple enough for everyday use while still showing a clean frontend workflow.</p>
+                </div>
+              </div>
+
+              <div class="case-study-proof">
+                <h4>Technical proof</h4>
+                <ul class="case-study-proof-list">
+                  <li>Live GitHub Pages deployment for browser testing.</li>
+                  <li>Public repository available for reviewing the frontend structure.</li>
+                  <li>Shows DOM interaction, user input handling, audio playback, and responsive UI work.</li>
+                </ul>
+                <div class="project-links">
+                  <a class="project-link primary" href="https://sukumar-dev.github.io/test/" target="_blank" rel="noreferrer">Visit Project</a>
+                  <a class="project-link" href="https://github.com/Sukumar-dev/test" target="_blank" rel="noreferrer">GitHub Repo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-study" data-type="realtime">
+            <div class="case-study-head">
+              <div class="case-study-titleblock">
+                <span class="project-tag">Featured Case Study - Real-Time</span>
+                <h3>Voice Room</h3>
+                <p class="project-copy">
+                  A real-time voice room app where users can join a shared browser room and talk live through a simple link-based flow.
+                </p>
+              </div>
+              <p class="case-study-stack"><strong>Tech Stack:</strong> JavaScript, WebRTC, Socket.IO, Node.js, Render</p>
+            </div>
+
+            <div class="case-study-layout">
+              <div class="case-study-story">
+                <div class="case-study-block">
+                  <h4>What I built</h4>
+                  <p>I built the joining flow, room-based communication behavior, and browser voice experience so people can test live audio without creating an account or installing an app.</p>
+                </div>
+                <div class="case-study-block">
+                  <h4>Why I built it</h4>
+                  <p>I chose this project because real-time communication forces you to think beyond static pages. It helped me practice state, connection flow, deployment, and user experience together.</p>
+                </div>
+                <div class="case-study-block">
+                  <h4>Challenge I solved</h4>
+                  <p>The hardest part was making the room flow understandable: users need to join quickly, share the room, and know the app is ready for live audio with very little friction.</p>
+                </div>
+              </div>
+
+              <div class="case-study-proof">
+                <h4>Technical proof</h4>
+                <ul class="case-study-proof-list">
+                  <li>Live hosted app available on Render.</li>
+                  <li>GitHub repo linked for the WebRTC and Socket.IO implementation.</li>
+                  <li>Demonstrates real-time signaling, room-based interaction, browser permissions, and deployment practice.</li>
+                </ul>
+                <div class="project-links">
+                  <a class="project-link primary" href="https://voice-chat-7ryk.onrender.com" target="_blank" rel="noreferrer">Visit Project</a>
+                  <a class="project-link" href="https://github.com/Sukumar-dev/Voice-chat" target="_blank" rel="noreferrer">GitHub Repo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-study" data-type="hardware">
+            <div class="case-study-head">
+              <div class="case-study-titleblock">
+                <span class="project-tag">Featured Case Study - Safety System</span>
+                <h3>Accident Prevention, Detection, and Reporting System</h3>
+                <p class="project-copy">
+                  A safety-focused project concept built around detecting accident risk, triggering alerts, and making emergency reporting faster.
+                </p>
+              </div>
+              <p class="case-study-stack"><strong>Tech Stack:</strong> Embedded safety concept, sensor workflow, alert logic, reporting design, project documentation</p>
+            </div>
+
+            <div class="case-study-layout">
+              <div class="case-study-story">
+                <div class="case-study-block">
+                  <h4>What I built</h4>
+                  <p>I worked on a system idea that connects prevention, detection, and reporting into one flow, so the project is not only about identifying an accident but also about improving response time.</p>
+                </div>
+                <div class="case-study-block">
+                  <h4>Why I built it</h4>
+                  <p>I wanted this project to solve a real safety problem. The goal was to think practically about how technology can support faster alerts and better communication during emergencies.</p>
+                </div>
+                <div class="case-study-block">
+                  <h4>Challenge I solved</h4>
+                  <p>The challenge was organizing the system flow clearly: prevention signals, accident detection, alert triggering, and reporting all need to work as one understandable process.</p>
+                </div>
+              </div>
+
+              <div class="case-study-proof">
+                <h4>Technical proof</h4>
+                <ul class="case-study-proof-list">
+                  <li>Project documentation is linked for review.</li>
+                  <li>Explains the accident prevention, detection, alert, and reporting workflow.</li>
+                  <li>Shows practical thinking around safety logic, response flow, and presentation-ready documentation.</li>
+                </ul>
+                <div class="project-links">
+                  <a class="project-link primary" href="Accident-Prevention-DOCUMENTATION .pdf" target="_blank" rel="noreferrer">View Documentation</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="supporting-projects-head">
+          <p class="section-kicker">Other Project Work</p>
+          <p class="section-copy">
+            These projects add more technical range in machine learning and data-focused problem solving.
+          </p>
+        </div>
+
         <div class="project-grid">
-          <article class="project" data-type="language">
-            <span class="project-tag">Language</span>
-            <h3>Learn Norwegian</h3>
-            <p class="project-copy">
-              Interactive English-to-Norwegian practice tool with voice translation, pronunciation
-              playback, and quick phrases for everyday use.
-            </p>
-            <p class="project-copy"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, translation workflow, browser audio playback</p>
-            <ul class="project-highlights">
-              <li>Voice-assisted learning flow with browser-friendly playback.</li>
-              <li>Quick access to useful conversation phrases and translations.</li>
-              <li>Built to keep language practice simple, fast, and directly usable in the browser.</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-link primary" href="https://sukumar-dev.github.io/test/" target="_blank" rel="noreferrer">Visit Project</a>
-              <a class="project-link" href="https://github.com/Sukumar-dev/test" target="_blank" rel="noreferrer">GitHub Repo</a>
-            </div>
-          </article>
-
-          <article class="project" data-type="realtime">
-            <span class="project-tag">Real-Time</span>
-            <h3>Voice Room</h3>
-            <p class="project-copy">
-              WebRTC and Socket.IO voice room where people can join shared browser rooms and talk
-              live without installing an app.
-            </p>
-            <p class="project-copy"><strong>Tech Stack:</strong> JavaScript, WebRTC, Socket.IO, Node.js, Render</p>
-            <ul class="project-highlights">
-              <li>Peer-to-peer audio signaling with shareable room links.</li>
-              <li>Browser-first setup designed for easy joining and testing.</li>
-              <li>Shows practical work with real-time communication and deployment-ready structure.</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-link primary" href="https://voice-chat-7ryk.onrender.com" target="_blank" rel="noreferrer">Visit Project</a>
-              <a class="project-link" href="https://github.com/Sukumar-dev/Voice-chat" target="_blank" rel="noreferrer">GitHub Repo</a>
-            </div>
-          </article>
-
           <article class="project" data-type="ml">
             <span class="project-tag">Machine Learning</span>
             <h3>Android Malware Detection using Genetic Algorithm</h3>
@@ -1331,24 +1574,6 @@
               <li>Focused on identifying suspicious patterns from transaction history.</li>
               <li>Structured as an end-to-end workflow from data preparation to prediction review.</li>
             </ul>
-          </article>
-
-          <article class="project" data-type="hardware">
-            <span class="project-tag">Hardware</span>
-            <h3>Accident Prevention, Detection, and Reporting System</h3>
-            <p class="project-copy">
-              Sensor-based safety concept for real-time accident detection, alerts, and faster
-              emergency reporting.
-            </p>
-            <p class="project-copy"><strong>Tech Stack:</strong> Embedded safety concept, alert workflow, reporting logic, documentation</p>
-            <ul class="project-highlights">
-              <li>Low-latency alert prototype aimed at faster safety response.</li>
-              <li>Combines prevention, detection, and reporting in one system concept.</li>
-              <li>Documentation available for project review and presentation.</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-link primary" href="Accident-Prevention-DOCUMENTATION .pdf" target="_blank" rel="noreferrer">Documentation</a>
-            </div>
           </article>
         </div>
       </section>
@@ -1543,16 +1768,22 @@
         event.preventDefault();
         const target = document.querySelector(href);
         if (!target) return;
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        closeMenu();
+        window.setTimeout(() => {
+          const header = document.querySelector(".site-header");
+          const offset = header ? header.offsetHeight + 18 : 18;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: Math.max(targetTop, 0), behavior: "smooth" });
+        }, 40);
         if (history.replaceState) {
           history.replaceState(null, "", href);
         }
-        closeMenu();
       });
     });
 
     function updateActiveNav() {
-      const scrollPoint = window.scrollY + 140;
+      const header = document.querySelector(".site-header");
+      const scrollPoint = window.scrollY + (header ? header.offsetHeight + 80 : 140);
       let active = "#summary";
 
       sections.forEach((section) => {
@@ -1576,7 +1807,8 @@
     updateActiveNav();
 
     const filterButtons = document.querySelectorAll(".filter-btn");
-    const projects = document.querySelectorAll(".project");
+    const projects = document.querySelectorAll(".project, .case-study");
+    const supportingProjectsHead = document.querySelector(".supporting-projects-head");
 
     filterButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -1588,6 +1820,10 @@
           const show = filter === "all" || project.dataset.type === filter;
           project.classList.toggle("hide", !show);
         });
+
+        if (supportingProjectsHead) {
+          supportingProjectsHead.classList.toggle("hide", filter !== "all" && filter !== "ml");
+        }
       });
     });
 
