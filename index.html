@@ -310,18 +310,17 @@
       margin: 0 auto;
       padding: 44px 24px 72px;
       display: grid;
-      grid-template-columns: minmax(0, 1.28fr) minmax(300px, 360px);
-      column-gap: 40px;
-      row-gap: 68px;
-      align-items: start;
+      gap: 68px;
     }
 
     .hero {
-      display: contents;
+      display: grid;
+      grid-template-columns: minmax(0, 1.28fr) minmax(300px, 360px);
+      gap: 40px;
+      align-items: start;
     }
 
     .hero-copy {
-      grid-column: 1;
       display: grid;
       gap: 22px;
       padding-top: 14px;
@@ -445,8 +444,6 @@
     }
 
     .profile-card {
-      grid-column: 2;
-      grid-row: 1 / span 20;
       position: static;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -531,7 +528,6 @@
     }
 
     .section-block {
-      grid-column: 1 / -1;
       display: grid;
       gap: 22px;
       min-width: 0;
@@ -730,7 +726,6 @@
     }
 
     .site-footer {
-      grid-column: 1 / -1;
       display: flex;
       justify-content: space-between;
       gap: 16px;
@@ -781,20 +776,12 @@
     }
 
     @media (max-width: 1040px) {
-      .page,
+      .hero,
       .dual-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-copy,
-      .section-block,
-      .site-footer,
       .profile-card {
-        grid-column: 1;
-      }
-
-      .profile-card {
-        grid-row: auto;
         max-width: 640px;
       }
     }
