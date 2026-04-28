@@ -513,7 +513,8 @@
     }
 
     .experience-grid,
-    .project-grid {
+    .project-grid,
+    .certificate-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
@@ -521,6 +522,7 @@
 
     .experience-card,
     .project,
+    .certificate-card,
     .strength-card,
     .education-item,
     .summary-card {
@@ -532,6 +534,7 @@
 
     .experience-card,
     .project,
+    .certificate-card,
     .strength-card,
     .summary-card {
       padding: 22px;
@@ -618,6 +621,12 @@
       align-content: start;
     }
 
+    .certificate-card {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
     .project.hide {
       display: none;
     }
@@ -636,6 +645,7 @@
     }
 
     .project-copy,
+    .certificate-copy,
     .strength-card p,
     .education-item p {
       color: var(--muted);
@@ -750,6 +760,7 @@
 
       .experience-grid,
       .project-grid,
+      .certificate-grid,
       .strength-grid,
       .metric-row {
         grid-template-columns: 1fr;
@@ -806,6 +817,7 @@
           <a href="#profile">About</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
+          <a href="#certificates">Certificates</a>
           <a href="#strengths">Strengths</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
@@ -1060,6 +1072,63 @@
         </div>
       </section>
 
+      <section class="section-block" id="certificates">
+        <div class="section-head">
+          <p class="section-kicker">Certificates</p>
+          <h2 class="section-title">Verified learning milestones and workshop completions.</h2>
+          <p class="section-copy">
+            These certificates highlight focused learning across databases, prompt engineering,
+            machine learning, and developer training. Each card links directly to the uploaded PDF.
+          </p>
+        </div>
+
+        <div class="certificate-grid">
+          <article class="certificate-card">
+            <span class="project-tag">Workshop</span>
+            <h3>DBMS Hands-on Workshop</h3>
+            <p class="certificate-copy">
+              Certificate of participation awarded by SITER for attending the DBMS hands-on workshop.
+            </p>
+            <div class="project-links">
+              <a class="project-link primary" href="DBMS-Workshop-Certificate.pdf" target="_blank" rel="noreferrer">View Certificate</a>
+            </div>
+          </article>
+
+          <article class="certificate-card">
+            <span class="project-tag">AWS</span>
+            <h3>Foundations of Prompt Engineering</h3>
+            <p class="certificate-copy">
+              AWS Training & Certification completion certificate for the Foundations of Prompt Engineering course.
+            </p>
+            <div class="project-links">
+              <a class="project-link primary" href="AWS-Prompt-Engineering-Certificate.pdf" target="_blank" rel="noreferrer">View Certificate</a>
+            </div>
+          </article>
+
+          <article class="certificate-card">
+            <span class="project-tag">IBM</span>
+            <h3>Machine Learning with Python</h3>
+            <p class="certificate-copy">
+              Cognitive Class and IBM certificate for completing the ML0101EN Machine Learning with Python course.
+            </p>
+            <div class="project-links">
+              <a class="project-link primary" href="IBM-Machine-Learning-with-Python-Certificate.pdf" target="_blank" rel="noreferrer">View Certificate</a>
+            </div>
+          </article>
+
+          <article class="certificate-card">
+            <span class="project-tag">Hashgraph</span>
+            <h3>Hashgraph Developer Course</h3>
+            <p class="certificate-copy">
+              Certificate of completion for the Hashgraph Developer Course issued by the Hashgraph Association.
+            </p>
+            <div class="project-links">
+              <a class="project-link primary" href="Hashgraph-Developer-Course-Certificate.pdf" target="_blank" rel="noreferrer">View Certificate</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="section-block" id="strengths">
         <div class="dual-grid">
           <div>
@@ -1154,7 +1223,7 @@
 
   <script>
     const navLinks = document.querySelectorAll("#topNav a");
-    const sections = ["#profile", "#experience", "#projects", "#strengths", "#education"]
+    const sections = ["#profile", "#experience", "#projects", "#certificates", "#strengths", "#education"]
       .map((id) => document.querySelector(id))
       .filter(Boolean);
 
