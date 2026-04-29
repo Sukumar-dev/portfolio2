@@ -6,11 +6,11 @@
   <title>Sukumar Singarapu | Full Stack Developer Portfolio</title>
   <meta
     name="description"
-    content="Portfolio of Sukumar Singarapu, a full stack developer building practical web products with WebRTC, browser-based learning tools, machine learning workflows, and direct project proof links."
+    content="Portfolio of Sukumar Singarapu, a full stack developer building practical web products with WebRTC, Node.js, REST API integration, browser-based learning tools, and direct project proof links."
   />
   <meta
     name="keywords"
-    content="Sukumar Singarapu, Full Stack Developer, JavaScript, Java, Python, SQL, REST APIs, WebRTC, Machine Learning, portfolio, software engineer, ATS friendly"
+    content="Sukumar Singarapu, Full Stack Developer, JavaScript, Node.js, Java, Python, SQL, REST API integration, WebRTC, Socket.IO, Git, Machine Learning, portfolio, software engineer"
   />
   <meta name="author" content="Sukumar Singarapu" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
@@ -30,7 +30,7 @@
   <meta property="og:title" content="Sukumar Singarapu | Full Stack Developer Portfolio" />
   <meta
     property="og:description"
-    content="Portfolio of Sukumar Singarapu featuring real-time web projects, browser-based product work, technical case studies, and hands-on development experience."
+    content="Portfolio of Sukumar Singarapu featuring real-time web projects, Node.js and REST API work, technical case studies, and hands-on development experience."
   />
   <meta property="og:url" content="https://sukumar-dev.github.io/portfolio/" />
   <meta property="og:type" content="website" />
@@ -41,7 +41,7 @@
   <meta name="twitter:title" content="Sukumar Singarapu | Full Stack Developer Portfolio" />
   <meta
     name="twitter:description"
-    content="Software portfolio of Sukumar Singarapu with real-time web projects, technical case studies, certifications, and direct proof links."
+    content="Software portfolio of Sukumar Singarapu with real-time web projects, Node.js and REST API work, technical case studies, certifications, and direct proof links."
   />
   <meta name="twitter:image" content="https://sukumar-dev.github.io/portfolio/Sukumar.jpeg" />
   <meta name="twitter:image:alt" content="Portrait of Sukumar Singarapu" />
@@ -71,10 +71,14 @@
         "knowsAbout": [
           "Full Stack Development",
           "JavaScript",
+          "Node.js",
           "Java",
           "Python",
           "SQL",
+          "Git",
+          "REST API Integration",
           "REST APIs",
+          "Socket.IO",
           "Machine Learning",
           "WebRTC",
           "Responsive Web Design"
@@ -85,7 +89,7 @@
         "@id": "https://sukumar-dev.github.io/portfolio/#page",
         "url": "https://sukumar-dev.github.io/portfolio/",
         "name": "Sukumar Singarapu Portfolio",
-        "description": "Portfolio website of Sukumar Singarapu featuring real-time web projects, software case studies, technical skills, certifications, and hands-on development experience.",
+        "description": "Portfolio website of Sukumar Singarapu featuring real-time web projects, Node.js and REST API integration, software case studies, technical skills, certifications, and hands-on development experience.",
         "about": {
           "@id": "https://sukumar-dev.github.io/portfolio/#person"
         },
@@ -139,12 +143,13 @@
       --bg: #f5f7fb;
       --surface: #ffffff;
       --surface-soft: #f8fafc;
+      --surface-raised: #fcfdff;
       --ink: #0f172a;
-      --muted: #526072;
-      --line: #d8e1ea;
+      --muted: #47576a;
+      --line: #d3dde8;
       --accent: #0f766e;
       --accent-soft: #e7f6f3;
-      --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --shadow: 0 22px 48px rgba(15, 23, 42, 0.07);
       --radius: 8px;
       --container: 1120px;
     }
@@ -240,13 +245,13 @@
     }
 
     .brand-name {
-      font-size: 1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: var(--ink);
     }
 
     .brand-role {
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.11em;
@@ -318,9 +323,9 @@
     .page {
       max-width: var(--container);
       margin: 0 auto;
-      padding: 44px 24px 72px;
+      padding: 48px 24px 80px;
       display: grid;
-      gap: 68px;
+      gap: 76px;
     }
 
     .hero,
@@ -337,7 +342,7 @@
 
     .hero-copy {
       display: grid;
-      gap: 22px;
+      gap: 24px;
       padding-top: 14px;
     }
 
@@ -356,17 +361,18 @@
     }
 
     .hero-title {
-      font-size: clamp(2.75rem, 6vw, 4.7rem);
-      line-height: 1.04;
+      font-size: clamp(3rem, 6.2vw, 5rem);
+      line-height: 0.98;
       letter-spacing: 0;
       font-weight: 700;
-      max-width: 10.5ch;
+      max-width: 9.5ch;
     }
 
     .hero-summary {
       max-width: 64ch;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 1.04rem;
+      line-height: 1.85;
     }
 
     .skill-row {
@@ -440,9 +446,9 @@
     .metric {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.85);
-      padding: 16px;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.92) 100%);
+      padding: 18px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.04);
     }
 
     .metric strong {
@@ -544,26 +550,39 @@
 
     .section-block {
       display: grid;
-      gap: 22px;
+      gap: 24px;
       align-content: start;
       min-width: 0;
+      position: relative;
+      padding-top: 34px;
+    }
+
+    .page > .section-block::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(15, 23, 42, 0.12), rgba(15, 118, 110, 0.12), rgba(15, 23, 42, 0.02));
     }
 
     .section-head {
       display: grid;
-      gap: 10px;
+      gap: 12px;
       max-width: 760px;
     }
 
     .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      line-height: 1.14;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.08;
       font-weight: 700;
     }
 
     .section-copy {
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
     }
 
     .experience-grid,
@@ -583,8 +602,9 @@
     .summary-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+      background: linear-gradient(180deg, var(--surface) 0%, var(--surface-raised) 100%);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
     .experience-card,
@@ -593,7 +613,22 @@
     .certificate-card,
     .strength-card,
     .summary-card {
-      padding: 22px;
+      padding: 24px;
+    }
+
+    @media (hover: hover) {
+      .metric:hover,
+      .experience-card:hover,
+      .case-study:hover,
+      .project:hover,
+      .certificate-card:hover,
+      .strength-card:hover,
+      .education-item:hover,
+      .profile-card:hover {
+        transform: translateY(-2px);
+        border-color: #c5d1de;
+        box-shadow: 0 18px 34px rgba(15, 23, 42, 0.08);
+      }
     }
 
     .experience-card {
@@ -632,9 +667,10 @@
     .summary-list {
       padding-left: 18px;
       display: grid;
-      gap: 8px;
+      gap: 10px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      line-height: 1.72;
     }
 
     .project-header {
@@ -652,7 +688,7 @@
 
     .case-study {
       display: grid;
-      gap: 18px;
+      gap: 20px;
       align-content: start;
     }
 
@@ -672,8 +708,8 @@
 
     .case-study-stack {
       color: var(--muted);
-      font-size: 0.88rem;
-      max-width: 320px;
+      font-size: 0.9rem;
+      max-width: 340px;
     }
 
     .case-study-metrics {
@@ -686,28 +722,28 @@
     .case-study-metric {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.84);
-      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 14px;
       display: grid;
-      gap: 2px;
+      gap: 4px;
     }
 
     .case-study-metric strong {
       display: block;
-      font-size: 1.02rem;
+      font-size: 1.12rem;
       line-height: 1.1;
     }
 
     .case-study-metric span {
       display: block;
       color: var(--muted);
-      font-size: 0.77rem;
+      font-size: 0.79rem;
       line-height: 1.35;
     }
 
     .case-study h3 {
-      font-size: 1.35rem;
-      line-height: 1.25;
+      font-size: 1.48rem;
+      line-height: 1.2;
     }
 
     .case-study-layout {
@@ -738,14 +774,15 @@
 
     .case-study-block p {
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: 0.95rem;
+      line-height: 1.75;
     }
 
     .case-study-proof {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--surface-soft);
-      padding: 18px;
+      background: linear-gradient(180deg, #fbfdff 0%, #f6fafc 100%);
+      padding: 20px;
       display: grid;
       gap: 12px;
       align-content: start;
@@ -831,7 +868,8 @@
     .strength-card p,
     .education-item p {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      line-height: 1.72;
     }
 
     .dual-grid {
@@ -849,7 +887,7 @@
 
     .strength-card {
       display: grid;
-      gap: 8px;
+      gap: 10px;
     }
 
     .summary-card {
@@ -921,8 +959,8 @@
 
     .reveal-ready {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
+      transform: translateY(16px);
+      transition: opacity 0.42s ease, transform 0.42s ease;
       transition-delay: var(--reveal-delay, 0ms);
     }
 
@@ -1312,12 +1350,13 @@
           <p class="eyebrow">Summary</p>
           <h1 class="hero-title">Sukumar Singarapu</h1>
           <p class="hero-summary">
-            I build practical web products with clean frontend flows, backend integration, and real-time browser features. My strongest work includes WebRTC communication, browser-based learning tools, and machine learning projects built with JavaScript, Python, SQL, and REST APIs.
+            I build practical web products with clean frontend flows, backend integration, and real-time browser features. My strongest work includes WebRTC communication, browser-based learning tools, and machine learning projects built with JavaScript, Node.js, Python, SQL, and REST APIs.
           </p>
 
           <div class="skill-row">
             <span class="skill-chip">Full Stack</span>
             <span class="skill-chip">JavaScript</span>
+            <span class="skill-chip">Node.js</span>
             <span class="skill-chip">Java</span>
             <span class="skill-chip">Python</span>
             <span class="skill-chip">SQL</span>
@@ -1444,8 +1483,8 @@
             </div>
             <ul>
               <li>Completed structured full stack training through guided modules and project-based implementation work.</li>
-              <li>Developed responsive interfaces and connected them with backend logic and REST APIs.</li>
-              <li>Improved day-to-day usability by debugging data-handling issues and cleaning up user flows.</li>
+              <li>Developed responsive interfaces and connected them with backend logic and REST APIs for project flows that worked across desktop and mobile screens.</li>
+              <li>Improved day-to-day usability by debugging data-handling issues and cleaning up user flows before review and demo sessions.</li>
               <li>Worked with mentors and teammates to turn requirements into working features and reviewable demos.</li>
             </ul>
           </article>
@@ -1530,8 +1569,8 @@
                 <h4>Technical proof</h4>
                 <ul class="case-study-proof-list">
                   <li>Live hosted app available on Render for end-to-end browser testing.</li>
-                  <li>Public GitHub repo available for reviewing the WebRTC and Socket.IO room implementation.</li>
-                  <li>Shows peer signaling, room-based interaction, browser permissions, and deployment-ready structure.</li>
+                  <li>Room flow is built around one shareable link and zero sign-up steps for quick first-time use.</li>
+                  <li>Public GitHub repo shows the WebRTC, Socket.IO, browser permissions, and deployment-ready structure.</li>
                 </ul>
                 <div class="project-links">
                   <a class="project-link primary" href="https://voice-chat-7ryk.onrender.com" target="_blank" rel="noreferrer">Visit Project</a>
@@ -1587,8 +1626,8 @@
                 <h4>Technical proof</h4>
                 <ul class="case-study-proof-list">
                   <li>Live GitHub Pages deployment available for browser-based testing.</li>
-                  <li>Public repository linked for reviewing the frontend structure and JavaScript flow.</li>
-                  <li>Shows DOM interaction, user input handling, translation flow, audio playback, and responsive UI work.</li>
+                  <li>Browser-first learning flow keeps practice available with zero install steps and direct audio playback.</li>
+                  <li>Public repository shows the frontend structure, JavaScript interaction flow, and responsive UI work.</li>
                 </ul>
                 <div class="project-links">
                   <a class="project-link primary" href="https://sukumar-dev.github.io/test/" target="_blank" rel="noreferrer">Visit Project</a>
@@ -1744,15 +1783,15 @@
           </article>
           <article class="strength-card">
             <h3>Backend and APIs</h3>
-            <p>REST APIs, backend logic, request handling, real-time communication basics</p>
+            <p>Node.js, REST API integration, backend logic, request handling, Socket.IO, real-time communication basics</p>
           </article>
           <article class="strength-card">
             <h3>Databases and Platforms</h3>
-            <p>SQL, GitHub, GitHub Pages, Render, deployment and hosting workflows</p>
+            <p>SQL, Git, GitHub, GitHub Pages, Render, deployment and hosting workflows</p>
           </article>
           <article class="strength-card">
-            <h3>Core Focus Areas</h3>
-            <p>Machine learning, WebRTC, prompt engineering foundations, practical problem solving</p>
+            <h3>Engineering Focus</h3>
+            <p>Machine learning, WebRTC, browser APIs, debugging, prompt engineering foundations, practical problem solving</p>
           </article>
         </div>
       </section>
