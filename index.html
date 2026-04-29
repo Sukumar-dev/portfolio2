@@ -156,7 +156,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
       scroll-padding-top: 104px;
     }
 
@@ -1892,6 +1892,36 @@
       menuToggle.setAttribute("aria-expanded", "false");
     }
 
+    function fastScrollTo(top) {
+      const destination = Math.max(top, 0);
+      if (prefersReducedMotion) {
+        window.scrollTo({ top: destination, behavior: "auto" });
+        return;
+      }
+
+      const start = window.scrollY;
+      const distance = destination - start;
+      if (Math.abs(distance) < 8) {
+        window.scrollTo({ top: destination, behavior: "auto" });
+        return;
+      }
+
+      const duration = 260;
+      const startTime = performance.now();
+
+      function step(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        window.scrollTo(0, start + distance * eased);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      }
+
+      window.requestAnimationFrame(step);
+    }
+
     if (menuToggle && siteNav) {
       menuToggle.addEventListener("click", () => {
         const isOpen = siteNav.classList.toggle("menu-open");
@@ -1912,7 +1942,7 @@
           const header = document.querySelector(".site-header");
           const offset = header ? header.offsetHeight + 18 : 18;
           const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: Math.max(targetTop, 0), behavior: "smooth" });
+          fastScrollTo(targetTop);
         }, 40);
         if (history.replaceState) {
           history.replaceState(null, "", href);
