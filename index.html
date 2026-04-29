@@ -6,7 +6,7 @@
   <title>Sukumar Singarapu | Full Stack Developer Portfolio</title>
   <meta
     name="description"
-    content="Portfolio of Sukumar Singarapu, a full stack developer focused on JavaScript, Java, Python, SQL, REST APIs, WebRTC, machine learning, and practical project case studies."
+    content="Portfolio of Sukumar Singarapu, a full stack developer focused on real-world web applications, WebRTC, machine learning, and practical project case studies with direct proof links."
   />
   <meta
     name="keywords"
@@ -30,7 +30,7 @@
   <meta property="og:title" content="Sukumar Singarapu | Full Stack Developer Portfolio" />
   <meta
     property="og:description"
-    content="Portfolio of Sukumar Singarapu featuring project case studies, technical skills, certifications, and hands-on development experience."
+    content="Portfolio of Sukumar Singarapu featuring engineering-focused project case studies, technical skills, certifications, and hands-on development experience."
   />
   <meta property="og:url" content="https://sukumar-dev.github.io/portfolio/" />
   <meta property="og:type" content="website" />
@@ -41,9 +41,10 @@
   <meta name="twitter:title" content="Sukumar Singarapu | Full Stack Developer Portfolio" />
   <meta
     name="twitter:description"
-    content="Software portfolio of Sukumar Singarapu with project case studies, technical skills, certifications, and direct proof links."
+    content="Software portfolio of Sukumar Singarapu with engineering-focused project case studies, technical skills, certifications, and direct proof links."
   />
   <meta name="twitter:image" content="https://sukumar-dev.github.io/portfolio/Sukumar.jpeg" />
+  <meta name="twitter:image:alt" content="Portrait of Sukumar Singarapu" />
 
   <script type="application/ld+json">
   {
@@ -165,6 +166,7 @@
       color: var(--ink);
       min-height: 100vh;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     img {
@@ -543,6 +545,7 @@
     .section-block {
       display: grid;
       gap: 22px;
+      align-content: start;
       min-width: 0;
     }
 
@@ -673,6 +676,35 @@
       max-width: 320px;
     }
 
+    .case-study-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .case-study-metric {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.84);
+      padding: 12px 14px;
+      display: grid;
+      gap: 2px;
+    }
+
+    .case-study-metric strong {
+      display: block;
+      font-size: 1.02rem;
+      line-height: 1.1;
+    }
+
+    .case-study-metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.35;
+    }
+
     .case-study h3 {
       font-size: 1.35rem;
       line-height: 1.25;
@@ -781,6 +813,7 @@
 
     .project-tag {
       width: fit-content;
+      max-width: 100%;
       border-radius: 999px;
       background: var(--accent-soft);
       border: 1px solid #cce9e4;
@@ -790,6 +823,7 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       font-weight: 700;
+      white-space: normal;
     }
 
     .project-copy,
@@ -885,6 +919,18 @@
       transform: translateX(-50%) translateY(0);
     }
 
+    .reveal-ready {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 1040px) {
       .hero,
       .dual-grid {
@@ -920,7 +966,12 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 14px;
-        padding-top: 4px;
+        margin-top: 4px;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
       }
 
       .site-nav.menu-open .nav-links {
@@ -937,11 +988,27 @@
         display: inline-flex;
       }
 
+      .nav-links a {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: calc(var(--radius) - 2px);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        background: var(--surface-soft);
+      }
+
       .experience-grid,
       .project-grid,
       .certificate-grid,
       .strength-grid,
-      .metric-row {
+      .metric-row,
+      .case-study-metrics {
         grid-template-columns: 1fr;
       }
 
@@ -952,8 +1019,12 @@
 
     @media (max-width: 620px) {
       .page {
-        padding: 28px 16px 56px;
+        padding: 28px 16px 72px;
         gap: 52px;
+      }
+
+      .page.declaration-target {
+        padding-bottom: 360px;
       }
 
       .site-nav {
@@ -994,7 +1065,25 @@
       }
 
       #declaration {
-        min-height: calc(100vh - 120px);
+        gap: 14px;
+        min-height: auto;
+      }
+
+      #declaration .summary-card {
+        padding: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal-ready,
+      .reveal-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
       }
     }
 
@@ -1260,15 +1349,15 @@
           <div class="metric-row">
             <article class="metric">
               <strong>5</strong>
-              <span>Projects in this portfolio</span>
+              <span>Practical projects with live proof</span>
             </article>
             <article class="metric">
               <strong>2</strong>
-              <span>Work experiences listed</span>
+              <span>Hands-on roles across software and operations</span>
             </article>
             <article class="metric">
               <strong>5</strong>
-              <span>Certificates linked for review</span>
+              <span>Certificates linked for direct review</span>
             </article>
           </div>
         </div>
@@ -1419,6 +1508,20 @@
                 </p>
               </div>
               <p class="case-study-stack"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, browser audio playback, translation workflow, GitHub Pages</p>
+              <div class="case-study-metrics" aria-label="Learn Norwegian project metrics">
+                <article class="case-study-metric">
+                  <strong>3</strong>
+                  <span>core learning flows</span>
+                </article>
+                <article class="case-study-metric">
+                  <strong>0</strong>
+                  <span>install required</span>
+                </article>
+                <article class="case-study-metric">
+                  <strong>2</strong>
+                  <span>direct proof links</span>
+                </article>
+              </div>
             </div>
 
             <div class="case-study-layout">
@@ -1462,6 +1565,20 @@
                 </p>
               </div>
               <p class="case-study-stack"><strong>Tech Stack:</strong> JavaScript, WebRTC, Socket.IO, Node.js, Render</p>
+              <div class="case-study-metrics" aria-label="Voice Room project metrics">
+                <article class="case-study-metric">
+                  <strong>1</strong>
+                  <span>shareable room flow</span>
+                </article>
+                <article class="case-study-metric">
+                  <strong>0</strong>
+                  <span>sign-up steps</span>
+                </article>
+                <article class="case-study-metric">
+                  <strong>2</strong>
+                  <span>direct proof links</span>
+                </article>
+              </div>
             </div>
 
             <div class="case-study-layout">
@@ -1505,6 +1622,20 @@
                 </p>
               </div>
               <p class="case-study-stack"><strong>Tech Stack:</strong> Embedded safety concept, sensor workflow, alert logic, reporting design, project documentation</p>
+              <div class="case-study-metrics" aria-label="Accident prevention project metrics">
+                <article class="case-study-metric">
+                  <strong>3</strong>
+                  <span>system stages</span>
+                </article>
+                <article class="case-study-metric">
+                  <strong>1</strong>
+                  <span>documentation set</span>
+                </article>
+                <article class="case-study-metric">
+                  <strong>1</strong>
+                  <span>end-to-end safety flow</span>
+                </article>
+              </div>
             </div>
 
             <div class="case-study-layout">
@@ -1744,9 +1875,16 @@
     const siteNav = document.querySelector(".site-nav");
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.querySelectorAll("#topNav a");
+    const pageRoot = document.querySelector(".page");
     const sections = ["#summary", "#education", "#experience", "#projects", "#certificates", "#skills", "#activities", "#declaration"]
       .map((id) => document.querySelector(id))
       .filter(Boolean);
+
+    function syncBottomSpacer(activeHash) {
+      if (!pageRoot) return;
+      const enableDeclarationSpacer = window.innerWidth <= 620 && activeHash === "#declaration";
+      pageRoot.classList.toggle("declaration-target", enableDeclarationSpacer);
+    }
 
     function closeMenu() {
       if (!siteNav || !menuToggle) return;
@@ -1768,6 +1906,7 @@
         event.preventDefault();
         const target = document.querySelector(href);
         if (!target) return;
+        syncBottomSpacer(href);
         closeMenu();
         window.setTimeout(() => {
           const header = document.querySelector(".site-header");
@@ -1802,13 +1941,16 @@
       if (window.innerWidth > 880) {
         closeMenu();
       }
+      syncBottomSpacer(window.location.hash);
       updateActiveNav();
     });
+    syncBottomSpacer(window.location.hash);
     updateActiveNav();
 
     const filterButtons = document.querySelectorAll(".filter-btn");
     const projects = document.querySelectorAll(".project, .case-study");
     const supportingProjectsHead = document.querySelector(".supporting-projects-head");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     filterButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -1826,6 +1968,33 @@
         }
       });
     });
+
+    if (!prefersReducedMotion) {
+      const revealTargets = document.querySelectorAll(
+        ".section-block, .experience-card, .case-study, .project, .certificate-card, .strength-card, .education-item, .metric, .summary-card, .profile-card"
+      );
+
+      revealTargets.forEach((element, index) => {
+        element.classList.add("reveal-ready");
+        element.style.setProperty("--reveal-delay", `${Math.min(index % 5, 4) * 50}ms`);
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("reveal-visible");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -8% 0px"
+        }
+      );
+
+      revealTargets.forEach((element) => revealObserver.observe(element));
+    }
 
     function toast(message) {
       const toastEl = document.getElementById("toast");
