@@ -691,23 +691,24 @@
     }
 
     .case-study-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+      gap: 16px 20px;
       align-items: start;
     }
 
     .case-study-titleblock {
       display: grid;
       gap: 10px;
-      max-width: 680px;
+      max-width: none;
+      min-width: 0;
     }
 
     .case-study-stack {
       color: var(--muted);
       font-size: 0.9rem;
-      max-width: 340px;
+      max-width: none;
+      justify-self: end;
     }
 
     .case-study-metrics {
@@ -715,6 +716,8 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
       margin-top: 6px;
+      grid-column: 1 / -1;
+      width: min(100%, 760px);
     }
 
     .case-study-metric {
@@ -975,6 +978,18 @@
 
       .profile-card {
         max-width: 640px;
+      }
+
+      .case-study-head {
+        grid-template-columns: 1fr;
+      }
+
+      .case-study-stack {
+        justify-self: start;
+      }
+
+      .case-study-metrics {
+        width: 100%;
       }
 
       .case-study-layout {
